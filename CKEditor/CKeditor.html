@@ -1,0 +1,15 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>CKEditor Demo</title>
+    <script type="text/javascript" src="PlugIns/ckfinder/ckfinder.js"></script>
+    <script type="text/ecmascript" src="Scripts/ckeditor/ckeditor.js"></script>
+</head>
+<body>
+    <textarea id="editor1" name="editor1" rows="10" cols="80"></textarea>
+    <script type="text/ecmascript">
+        var editor = CKEDITOR.replace('editor1', { extraPlugins: 'autogrow' });
+        //CKFinder.setupCKEditor(editor, 'PlugIns/ckfinder/');
+    </script>
+</body>
+</html>

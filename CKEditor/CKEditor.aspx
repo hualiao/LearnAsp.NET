@@ -9,8 +9,13 @@
 <body>
     <form id="form1" runat="server">
     <div>
-        <CKeditor:CKEditorControl ID="CKeditorControl1" runat="server" BasePath="~/Scripts/ckeditor" OnPreRender="CKeditorControl1_PreRender"></CKeditor:CKEditorControl>
+        <CKeditor:CKEditorControl ID="CKeditorControl1" runat="server" BasePath="~/Scripts/ckeditor" OnLoad="CKeditorControl1_Load"></CKeditor:CKEditorControl>
     </div>
+    <textarea id="editor1" name="editor1" rows="10" cols="80"></textarea>
+    <input type="submit" value="Submit" />
     </form>
+    <script type="text/javascript">
+        CKEDITOR.replace('editor1', { htmlEncodeOutput: true});
+    </script>
 </body>
 </html>
