@@ -1,0 +1,175 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Menu</title>
+    <style type="text/css">
+        ul#list-nav {
+          margin:20px;
+          padding:0;
+          list-style:none;
+          width:525px;
+        }
+        ul#list-nav li {
+          display:inline
+        }
+        ul#list-nav li a {
+         text-decoration:none;
+         padding:5px 0;
+         width:100px;
+         background:#485e49;
+         color:#eee;
+         float:left;
+         text-align:center;
+         border-left:1px solid #fff;
+        }
+        ul#list-nav li a:hover {
+          background:#a2b3a1;
+          color:#000
+        }
+
+        /*List Menu*/
+        ul#list-menu {
+         list-style:none;
+         margin:20px;
+         padding:0;
+         border:solid #668265;
+         border-width:1px 2px 2px 2px;
+         width:150px
+        }
+
+        ul#list-menu li a {
+         text-decoration:none;
+         display:block;
+         border-top:1px solid #77a487;
+         padding:5px;
+         background:#485e49;
+         color:#eee
+        }
+
+        ul#list-menu li a:hover {
+         background:#a2b3a1;
+         color:#000
+        }
+
+    </style>
+    <!--DropDown Memu Navigation-->
+    <style type="text/css">
+        #wrap	{
+	        width: 100%; /* Spans the width of the page */
+	        height: 50px; 
+	        margin: 0; /* Ensures there is no space between sides of the screen and the menu */
+	        z-index: 99; /* Makes sure that your menu remains on top of other page elements */
+	        position: relative; 
+	        background-color: #366b82;
+	    }
+        .navbar	{
+	        height: 50px;
+                padding: 0;
+	        margin: 0;
+	        position: absolute; /* Ensures that the menu doesn’t affect other elements */
+	        border-right: 1px solid #54879d; 
+	        }
+	    .navbar li 	{
+			    height: auto;
+			    width: 150px;  /* Each menu item is 150px wide */
+			    float: left;  /* This lines up the menu items horizontally */
+			    text-align: center;  /* All text is placed in the center of the box */
+			    list-style: none;  /* Removes the default styling (bullets) for the list */
+			    font: normal bold 12px/1.2em Arial, Verdana, Helvetica;  
+			    padding: 0;
+			    margin: 0;
+			    background-color: #366b82;
+        }
+        .navbar a	{							
+		    padding: 18px 0;  /* Adds a padding on the top and bottom so the text appears centered vertically */
+		    border-left: 1px solid #54879d; /* Creates a border in a slightly lighter shade of blue than the background.  Combined with the right border, this creates a nice effect. */
+		    border-right: 1px solid #1f5065; /* Creates a border in a slightly darker shade of blue than the background.  Combined with the left border, this creates a nice effect. */
+		    text-decoration: none;  /* Removes the default hyperlink styling. */
+		    color: white; /* Text color is white */
+		    display: block;
+		}
+        .navbar li:hover, a:hover {background-color: #54879d;} 
+        .navbar li ul 	{
+		    display: none;  /* Hides the drop-down menu */
+		    height: auto;									
+		    margin: 0; /* Aligns drop-down box underneath the menu item */
+		    padding: 0; /* Aligns drop-down box underneath the menu item */			
+		}				
+
+        .navbar li:hover ul 	{
+            display: block; /* Displays the drop-down box when the menu item is hovered over */
+        }
+        .navbar li ul li {background-color: #54879d;}
+        .navbar li ul li a 	{
+		    border-left: 1px solid #1f5065; 
+		    border-right: 1px solid #1f5065; 
+		    border-top: 1px solid #74a3b7; 
+		    border-bottom: 1px solid #1f5065; 
+		}
+				
+        .navbar li ul li a:hover	{background-color: #366b82;}
+    </style>
+</head>
+<body>
+    <ul id="list-nav">
+      <li><a href="http://www.vanseodesign.com/css/simple-navigation-bar-with-css-and-xhtml/">Home</a></li>
+      <li><a href="#">About Us</a></li>
+      <li><a href="#">Services</a></li>
+      <li><a href="#">Products</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+    <br />
+    <ul id="list-menu">
+      <li><a href="http://www.vanseodesign.com/css/simple-menus-with-xhtml-lists-and-css/">Home</a></li>
+      <li><a href="#">About Us</a></li>
+      <li><a href="#">Services</a></li>
+      <li><a href="#">Products</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+    <br />
+    <div id="wrap">
+		  <ul class="navbar">
+			 <li><a href="http://www.mrc-productivity.com/techblog/?p=1049">Home</a></li>
+			 <li><a href="#">Retrievals</a>
+				<ul>
+				   <li><a href="#">Data Listing</a></li>
+				   <li><a href="#">Web Scheduling</a></li>
+				   <li><a href="#">Google Maps Application</a></li>
+				</ul>         
+			 </li>
+			 <li><a href="#">Reporting</a>
+				<ul>
+				   <li><a href="#" >Ad Hoc Report</a></li>
+				   <li><a href="#">Drill Down Report</a></li>
+				   <li><a href="#">Ranking Report</a></li>
+				</ul>         
+			 </li>
+			 <li><a href="#">Business Intelligence</a>
+				<ul>
+				   <li><a href="#">Business Dashboard</a></li>
+				   <li><a href="#">Web Pivot Table</a></li>
+				   <li><a href="#">Interactive Report</a></li>
+				   <li><a href="#">What-If Analysis</a></li>
+				</ul>         
+			 </li>
+			 <li><a href="#">Data Maintenance</a>
+				<ul>
+				   <li><a href="#">Database CRUD</a></li>
+				   <li><a href="#">Database Update</a></li>
+				   <li><a href="#">Order Entry</a></li>
+				   <li><a href="#">Drag-and-Drop Application</a></li>
+				</ul>         
+			 </li>
+			 <li><a href="#">B2B Portal</a>
+				<ul>
+				   <li><a href="#">B2B Portal</a></li>
+				   <li><a href="#">Secure Data-Driven Listings</a></li>
+				   <li><a href="#">Secure Shopping Cart</a></li>
+				</ul>         
+			 </li>
+		  </ul>
+    </div>
+</body>
+</html>
