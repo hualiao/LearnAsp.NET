@@ -42,6 +42,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CodeTimer\CodeTimer.cs" />
+    <Compile Include="IntegerToRoman\IntegerToRoman.cs" />
+    <Compile Include="NullCheck\NullCheckExtention.cs" />
+    <Compile Include="Person.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

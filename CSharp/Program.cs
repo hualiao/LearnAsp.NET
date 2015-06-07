@@ -6,6 +6,7 @@ using System.Threading;
 
 using CSharp.CodeTimer;
 using CSharp.IntegerToRoman;
+using CSharp.NullCheck;
 
 namespace CSharp
 {
@@ -22,6 +23,14 @@ namespace CSharp
             Console.WriteLine(RomanNumerals.Translate(2049));
             Console.WriteLine(RomanNumerals.Translate(2050));
             Console.WriteLine(RomanNumerals.Translate(2051));
+
+            Person person = Person.Generate();
+            string passportNumber = person.IfNotNull(x => x.Passport).IfNotNull(x => x.Number);
+            Console.WriteLine(passportNumber);
+            passportNumber = person.IFNotDefault(x => x.Passport).IFNotDefault(x => x.Number);
+            Console.WriteLine(passportNumber);
+            passportNumber = person.IFNotDefault(x => x.Passport).IFNotDefault(x => x.Number, x => x.Number != "default number!");
+            Console.WriteLine(passportNumber);
 
             Console.ReadKey();
         }
