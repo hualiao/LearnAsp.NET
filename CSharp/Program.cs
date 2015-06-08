@@ -32,7 +32,17 @@ namespace CSharp
             passportNumber = person.IFNotDefault(x => x.Passport).IFNotDefault(x => x.Number, x => x.Number != "default number!");
             Console.WriteLine(passportNumber);
 
+            passportNumber = true /*TrueCondition*/
+            ? ComputeSomething()
+            : null;
+            Console.WriteLine(passportNumber);
+            passportNumber = true.IFNotDefault(_ => ComputeSomething());
+            Console.WriteLine(passportNumber);
+
             Console.ReadKey();
         }
+
+        public static string ComputeSomething() { return "Test"; }
+
     }
 }
