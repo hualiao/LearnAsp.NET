@@ -7,6 +7,7 @@ using System.Threading;
 using CSharp.CodeTimer;
 using CSharp.IntegerToRoman;
 using CSharp.NullCheck;
+using CSharp.GenericExtension;
 
 namespace CSharp
 {
@@ -39,6 +40,9 @@ namespace CSharp
             passportNumber = true.IFNotDefault(_ => ComputeSomething());
             Console.WriteLine(passportNumber);
 
+            string[] names = { "Jon", "Marc", "Joel", "Thomas", "Copsey", "Konrad", "Andrew", "Brian", "Bill" };
+            var result = names.AlphaLengthWise(a => a.Length);
+            Console.WriteLine(String.Join(",",result));
             Console.ReadKey();
         }
 

@@ -42,7 +42,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CodeTimer\CodeTimer.cs" />
+    <Compile Include="GenericExtension\GenericExtension.cs" />
     <Compile Include="IntegerToRoman\IntegerToRoman.cs" />
+    <Compile Include="Linq\Linq.cs" />
     <Compile Include="NullCheck\NullCheckExtention.cs" />
     <Compile Include="Person.cs" />
     <Compile Include="Program.cs" />
