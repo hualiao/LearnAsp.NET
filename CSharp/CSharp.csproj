@@ -44,11 +44,14 @@
     <Compile Include="CodeTimer\CodeTimer.cs" />
     <Compile Include="GenericExtension\GenericExtension.cs" />
     <Compile Include="IntegerToRoman\IntegerToRoman.cs" />
-    <Compile Include="Linq\Linq.cs" />
+    <Compile Include="Linq\Aggregate.cs" />
+    <Compile Include="Linq\Order.cs" />
+    <Compile Include="Linq\StrCollectionToString.cs" />
     <Compile Include="NullCheck\NullCheckExtention.cs" />
     <Compile Include="Person.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Whiskey.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

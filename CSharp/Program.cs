@@ -43,6 +43,9 @@ namespace CSharp
             string[] names = { "Jon", "Marc", "Joel", "Thomas", "Copsey", "Konrad", "Andrew", "Brian", "Bill" };
             var result = names.AlphaLengthWise(a => a.Length);
             Console.WriteLine(String.Join(",",result));
+
+            CSharp.Linq.StrCollectionToString.StrCollectionToSingleString();
+            CSharp.Linq.Aggregate.AggregateTest();
             Console.ReadKey();
         }
 

@@ -6,7 +6,7 @@ using CSharp;
 
 namespace CSharp.Linq
 {
-    class Linq
+    class Order
     {
 
         private static IList<Person> customers = new List<Person> { 

@@ -24,5 +24,15 @@ namespace CSharp.GenericExtension
                 .OrderBy(a => lengthProvider(a))
                 .ThenBy(a => a);
         }
+
+        /// <summary>
+        /// Using the 'Where' Clause with Generics
+        /// Ref: http://www.codeproject.com/Articles/29079/Using-Generic-Extension-Methods
+        /// </summary>
+        public static string DoSerialize<T>(this T entity) where T : Person
+        {
+            //Serialze the entity object and return its string represenatation
+            return String.Empty;
+        }
     }
 }
