@@ -45,6 +45,7 @@
     <Compile Include="GenericExtension\GenericExtension.cs" />
     <Compile Include="IntegerToRoman\IntegerToRoman.cs" />
     <Compile Include="Linq\Aggregate.cs" />
+    <Compile Include="Linq\Foreach.cs" />
     <Compile Include="Linq\Order.cs" />
     <Compile Include="Linq\StrCollectionToString.cs" />
     <Compile Include="NullCheck\NullCheckExtention.cs" />
