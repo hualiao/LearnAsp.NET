@@ -38,6 +38,7 @@ namespace CSharp.Serializer
                 GC.WaitForFullGCComplete();
                 GC.Collect();
             }
+            Report.AllResult(measurements);
 
         }
     }

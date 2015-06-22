@@ -32,11 +32,11 @@ namespace CSharp
         {
             return new Person
             {
-                FirstName = "Liao",
-                LastName = "Hua",
-                Age = 25,
-                Gender = Gender.Male,
-                Passport = new Passport() { Number="default number!" }
+                FirstName = Randomizer.Name,
+                LastName = Randomizer.Name,
+                Age = (uint)Randomizer.Rand.Next(120),
+                Gender = (Randomizer.Rand.Next(0, 1) == 0) ? Gender.Male : Gender.Female,
+                Passport = new Passport() { Number = Randomizer.Id }
             };
         }
 
