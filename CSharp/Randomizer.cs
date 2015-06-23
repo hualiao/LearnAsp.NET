@@ -57,7 +57,7 @@ namespace CSharp
             }
         }
 
-        private static DateTime GetDate(DateTime startDT, DateTime stopDT)
+        public static DateTime GetDate(DateTime startDT, DateTime stopDT)
         {
             return startDT.AddDays(Rand.Next((stopDT - startDT).Days));
         }

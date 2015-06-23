@@ -45,6 +45,7 @@ namespace CSharp.Serializer
                 oneTestMeasurements.Key,
                 AverageTime(oneTestMeasurements.Value, 10),
                 AverageTime(oneTestMeasurements.Value),
+                P99Time(oneTestMeasurements.Value),
                 MinTime(oneTestMeasurements.Value),
                 MaxTime(oneTestMeasurements.Value),
                 AverageSize(oneTestMeasurements.Value)
@@ -81,7 +82,7 @@ namespace CSharp.Serializer
 
         private static double MinTime(Measurements[] measurements)
         {
-            if (measurements == null || measurements.Length == 0) return;
+            if (measurements == null || measurements.Length == 0) return 0;
             return measurements.Min(m => m.Time);
         }
 

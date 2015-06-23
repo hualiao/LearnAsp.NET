@@ -36,7 +36,12 @@ namespace CSharp
                 LastName = Randomizer.Name,
                 Age = (uint)Randomizer.Rand.Next(120),
                 Gender = (Randomizer.Rand.Next(0, 1) == 0) ? Gender.Male : Gender.Female,
-                Passport = new Passport() { Number = Randomizer.Id }
+                Passport = new Passport() 
+                { 
+                    Number = Randomizer.Id,
+                    Authority=Randomizer.Phrase,
+                    ExpirationDate=Randomizer.GetDate(DateTime.UtcNow,DateTime.UtcNow+TimeSpan.FromDays(1000))
+                }
             };
         }
 
@@ -75,7 +80,7 @@ namespace CSharp
             List<string> errors)
         {
             if(!left.Equals(right))
-                errors.Add(String.Format("\t{0}: {1} != {2}",objectName,left,right);
+                errors.Add(String.Format("\t{0}: {1} != {2}",objectName,left,right));
         }
     }
 }

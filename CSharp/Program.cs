@@ -8,6 +8,7 @@ using CSharp.CodeTimer;
 using CSharp.IntegerToRoman;
 using CSharp.NullCheck;
 using CSharp.GenericExtension;
+using CSharp.Serializer;
 
 namespace CSharp
 {
@@ -46,10 +47,23 @@ namespace CSharp
 
             CSharp.Linq.StrCollectionToString.StrCollectionToSingleString();
             CSharp.Linq.Aggregate.AggregateTest();
+
+            TestSerialize(100);
             Console.ReadKey();
         }
 
         public static string ComputeSomething() { return "Test"; }
+
+        public static void TestSerialize(int repetitions)
+        {
+            Console.WriteLine("Repetitions: " + repetitions);
+            var serializers = new Dictionary<string, ISerDeser>
+            {
+                {"MS Binary",new BinarySerializer()},
+                {"ProtoBuf",new ProtoBufSerializer()}
+            };
+            SerializeTester.Tests(repetitions, serializers);
+        }
 
     }
 }
