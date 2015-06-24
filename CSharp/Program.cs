@@ -60,6 +60,7 @@ namespace CSharp
             var serializers = new Dictionary<string, ISerDeser>
             {
                 {"MS Binary",new BinarySerializer()},
+                {"MS DataContract",new DataContractSerializerSerializer(typeof(Person))},
                 {"ProtoBuf",new ProtoBufSerializer()}
             };
             SerializeTester.Tests(repetitions, serializers);

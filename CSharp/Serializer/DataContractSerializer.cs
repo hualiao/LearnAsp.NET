@@ -9,7 +9,7 @@ namespace CSharp.Serializer
 {
     internal class DataContractSerializerSerializer : ISerDeser
     {
-        private DataContractSerializer _serializer = null;
+        private static DataContractSerializer _serializer = null;
 
         public DataContractSerializerSerializer(Type t)
         {
@@ -33,7 +33,7 @@ namespace CSharp.Serializer
         public T Deserialize<T>(string serialized)
         {
             var b = Convert.FromBase64String(serialized);
-            using (var stream = new MemoryStream())
+            using (var stream = new MemoryStream(b))
             {
                 stream.Seek(0, SeekOrigin.Begin);
                 return (T)_serializer.ReadObject(stream);

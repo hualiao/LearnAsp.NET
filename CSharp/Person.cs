@@ -2,28 +2,42 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Runtime.Serialization;
 using ProtoBuf;
 
 namespace CSharp
 {
+    [DataContract]
+    [Serializable]
     public enum Gender
     {
+        [EnumMember]
         Male,
+        [EnumMember]
         Female
     }
 
+    [DataContract]
     [ProtoContract]
+    [Serializable]
     public class Passport
     {
+        [DataMember]
         [ProtoMember(1)]
         public string Number { get; set; }
+
+        [DataMember]
         [ProtoMember(2)]
         public string Authority { get; set; }
+
+        [DataMember]
         [ProtoMember(3)]
         public DateTime ExpirationDate { get; set; }
     }
 
+    [DataContract]
     [ProtoContract]
+    [Serializable]
     public class Person
     {
         public Person() { }
@@ -45,14 +59,23 @@ namespace CSharp
             };
         }
 
+        [DataMember]
         [ProtoMember(1)]
         public string FirstName { get; set; }
+
+        [DataMember]
         [ProtoMember(2)]
         public string LastName { get; set; }
+
+        [DataMember]
         [ProtoMember(3)]
         public uint Age { get; set; }
+
+        [DataMember]
         [ProtoMember(4)]
         public Gender Gender { get; set; }
+
+        [DataMember]
         [ProtoMember(5)]
         public Passport Passport { get; set; }
 
