@@ -9,6 +9,7 @@ namespace CSharp.Serializer
 {
     internal class AvroSerializer : ISerDeser
     {
+        // TODO: There is a hack: FOr some reason it is impossible to pass generic T type. The Person type is patched into serializer code.
         private readonly IAvroSerializer<Person> _serializer = Microsoft.Hadoop.Avro.AvroSerializer.Create<Person>();
 
         public AvroSerializer(Type type) { }
@@ -36,5 +37,11 @@ namespace CSharp.Serializer
             }
         }
         #endregion
+
+        /*
+         *  https://hadoopsdk.codeplex.com/wikipage?title=Avro%20Library&referringTitle=Home
+         *  https://code.msdn.microsoft.com/windowsazure/Serialize-data-with-the-86055923
+         *  https://azure.microsoft.com/en-us/documentation/articles/hdinsight-dotnet-avro-serialization/
+        */
     }
 }
