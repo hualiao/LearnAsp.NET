@@ -55,6 +55,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CodeTimer\CodeTimer.cs" />
+    <Compile Include="DelegateDemo.cs" />
     <Compile Include="GenericExtension\GenericExtension.cs" />
     <Compile Include="IntegerToRoman\IntegerToRoman.cs" />
     <Compile Include="Linq\Aggregate.cs" />
