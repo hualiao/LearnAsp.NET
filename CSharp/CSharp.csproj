@@ -76,6 +76,7 @@
     <Compile Include="Serializer\SerializeTester.cs" />
     <Compile Include="TupleDemo.cs" />
     <Compile Include="Utility\MajorityElement.cs" />
+    <Compile Include="Utility\ReadFile.cs" />
     <Compile Include="Whiskey.cs" />
   </ItemGroup>
   <ItemGroup>
