@@ -10,6 +10,7 @@ namespace CSharp.Utility
     /// </summary>
     public class UniqueGenerator
     {
+        static Random random = new Random();
         /// <summary>
         /// Ref: http://stackoverflow.com/questions/7513391/newguid-vs-system-guid-newguid-tostringd
         /// </summary>
@@ -25,6 +26,16 @@ namespace CSharp.Utility
             return guid.ToString();
             //return guid.ToString("N");
             //return guid.ToString("D");
+        }
+
+        /// <summary>
+        /// not realy unique
+        /// </summary>
+        /// <returns></returns>
+        public static string UniqueNum()
+        {
+            int rnd = random.Next(1, 1000000);
+            return rnd.ToString();
         }
 
         private string GenerateId()

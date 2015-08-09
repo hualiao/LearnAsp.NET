@@ -64,6 +64,10 @@
     <Compile Include="Linq\Order.cs" />
     <Compile Include="Linq\StrCollectionToString.cs" />
     <Compile Include="NullCheck\NullCheckExtention.cs" />
+    <Compile Include="OOP\Account.cs" />
+    <Compile Include="OOP\ClassHierarchies.cs" />
+    <Compile Include="OOP\IAccount.cs" />
+    <Compile Include="OOP\ObjectCollaboration.cs" />
     <Compile Include="Person.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
