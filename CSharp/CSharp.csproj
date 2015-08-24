@@ -54,8 +54,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Algorithm\LowestCommonAncestor.cs" />
     <Compile Include="CodeTimer\CodeTimer.cs" />
     <Compile Include="DelegateDemo.cs" />
+    <Compile Include="DesignPattern\Creational Pattern\FactoryMethod.cs" />
+    <Compile Include="DesignPattern\Creational Pattern\Singleton.cs" />
     <Compile Include="GenericExtension\GenericExtension.cs" />
     <Compile Include="GenericWrap.cs" />
     <Compile Include="IntegerToRoman\IntegerToRoman.cs" />
