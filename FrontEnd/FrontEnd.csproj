@@ -59,6 +59,7 @@
   <ItemGroup>
     <Content Include="GraphficsDemo.aspx" />
     <Content Include="InlineExpression.aspx" />
+    <Content Include="JavaScript\apply call bind.js" />
     <Content Include="JavaScript\ArgumnetsToArray.js" />
     <Content Include="JavaScript\Currying.js" />
     <Content Include="JavaScript\OOP-Class.js" />
