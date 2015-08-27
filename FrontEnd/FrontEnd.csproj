@@ -62,6 +62,7 @@
     <Content Include="JavaScript\apply call bind.js" />
     <Content Include="JavaScript\ArgumnetsToArray.js" />
     <Content Include="JavaScript\Currying.js" />
+    <Content Include="JavaScript\Loader.js" />
     <Content Include="JavaScript\OOP-Class.js" />
     <Content Include="MenuNavigation.html" />
     <Content Include="Web.config" />
