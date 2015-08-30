@@ -57,6 +57,12 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="FullPageBackgroundImage\FullPageBackgroundImage-css1.html" />
+    <Content Include="FullPageBackgroundImage\FullPageBackgroundImage-css2.html" />
+    <Content Include="FullPageBackgroundImage\FullPageBackgroundImage-jquery.html" />
+    <Content Include="FullPageBackgroundImage\FullPageBackgroundImage-progressive.html" />
+    <Content Include="FullPageBackgroundImage\images\bg.jpg" />
+    <Content Include="FullPageBackgroundImage\ResponseImage.js" />
     <Content Include="GraphficsDemo.aspx" />
     <Content Include="InlineExpression.aspx" />
     <Content Include="JavaScript\apply call bind.js" />
