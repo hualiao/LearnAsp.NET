@@ -54,6 +54,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Algorithm\LiatAllAnagrams.cs" />
     <Compile Include="Algorithm\LowestCommonAncestor.cs" />
     <Compile Include="CodeTimer\CodeTimer.cs" />
     <Compile Include="DelegateDemo.cs" />
@@ -82,6 +83,7 @@
     <Compile Include="Serializer\ProtoBufSerializer.cs" />
     <Compile Include="Serializer\Report.cs" />
     <Compile Include="Serializer\SerializeTester.cs" />
+    <Compile Include="SQLHelper\SqlCommand.cs" />
     <Compile Include="TupleDemo.cs" />
     <Compile Include="Utility\MajorityElement.cs" />
     <Compile Include="Utility\ReadFile.cs" />
