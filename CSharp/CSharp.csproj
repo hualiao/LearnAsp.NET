@@ -57,6 +57,7 @@
     <Compile Include="Algorithm\LiatAllAnagrams.cs" />
     <Compile Include="Algorithm\LowestCommonAncestor.cs" />
     <Compile Include="CodeTimer\CodeTimer.cs" />
+    <Compile Include="CodeTimer\StringConcatVsStringJoin.cs" />
     <Compile Include="DelegateDemo.cs" />
     <Compile Include="DesignPattern\Creational Pattern\FactoryMethod.cs" />
     <Compile Include="DesignPattern\Creational Pattern\Singleton.cs" />
