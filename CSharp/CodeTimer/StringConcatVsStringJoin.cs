@@ -49,25 +49,3 @@ namespace CSharp.CodeTimer
         }
     }
 }
-public class AnagramFinder 
-{ 
-    private readonly ILookup<string, string> _anagramLookup; 
- 
-    public AnagramFinder(IWordDao dao) 
-    { 
-        // construct the lookup at initialization using the
-        // dictionary words with the sorted letters as the key
-        _anagramLookup = dao.RetrieveWords().ToLookup( 
-            k => string.Concat(k.OrderBy(c => c))); 
-    }
- 
-    public IList<string> FindAnagrams(string word) 
-    { 
-        // at lookup time, sort the input word as the key,
-        // and return all words (minus the input word) in the sequence
-        string input = word.ToLower(); 
-        string key = string.Concat(input.OrderBy(c => c));
- 
-        return _anagramLookup[key].Where(w => w != input).ToList(); 
-    } 
-}
