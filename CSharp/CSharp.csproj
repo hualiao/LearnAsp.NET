@@ -88,6 +88,7 @@
     <Compile Include="TupleDemo.cs" />
     <Compile Include="Utility\MajorityElement.cs" />
     <Compile Include="Utility\ReadFile.cs" />
+    <Compile Include="Utility\SortDictionary.cs" />
     <Compile Include="Utility\UniqueGenerator.cs" />
     <Compile Include="Whiskey.cs" />
   </ItemGroup>
