@@ -72,6 +72,7 @@
     <Compile Include="OOP\Account.cs" />
     <Compile Include="OOP\ClassHierarchies.cs" />
     <Compile Include="OOP\IAccount.cs" />
+    <Compile Include="OOP\Interface.cs" />
     <Compile Include="OOP\ObjectCollaboration.cs" />
     <Compile Include="Person.cs" />
     <Compile Include="Program.cs" />
