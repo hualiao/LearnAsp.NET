@@ -9,13 +9,15 @@ using CSharp.IntegerToRoman;
 using CSharp.NullCheck;
 using CSharp.GenericExtension;
 using CSharp.Serializer;
+using CSharp.Linq;
 
 namespace CSharp
 {
     class Program
     {
         static void Main(string[] args)
-        {
+        {            
+            LinqToJson.CreateJson();
             CodeTimer.CodeTimer.Time("Thread Sleep", 1, () => { Thread.Sleep(3000); });
             CodeTimer.CodeTimer.Time("Empty Method", 10000000, () => { });
 
