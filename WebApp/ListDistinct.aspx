@@ -8,6 +8,7 @@
 </head>
 <body>
     <form id="form1" runat="server">
+        <label runat="server" id="lblHandler"></label>
     <div>
     <asp:GridView runat="server" ID="grv_Products"></asp:GridView>
     <br />

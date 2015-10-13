@@ -58,6 +58,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Controls\ImageGrid.ascx" />
+    <Content Include="CustomConfiguration.aspx" />
     <Content Include="ImageGridDemo.aspx" />
     <Content Include="ListDistinct.aspx" />
     <Content Include="Web.config" />
@@ -70,6 +71,14 @@
     <Compile Include="Controls\ImageGrid.ascx.designer.cs">
       <DependentUpon>ImageGrid.ascx</DependentUpon>
     </Compile>
+    <Compile Include="CustomConfiguration.aspx.cs">
+      <DependentUpon>CustomConfiguration.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CustomConfiguration.aspx.designer.cs">
+      <DependentUpon>CustomConfiguration.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\CustomConfiguration.cs" />
     <Compile Include="Helpers\Logger.cs" />
     <Compile Include="ImageGridDemo.aspx.cs">
       <DependentUpon>ImageGridDemo.aspx</DependentUpon>

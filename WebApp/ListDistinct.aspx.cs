@@ -13,6 +13,8 @@ namespace WebApp
         {
             if (!IsPostBack)
             {
+                string handler = HttpContext.Current.Handler.ToString();
+                lblHandler.InnerText = handler;
                 ListDistinct repo = new ListDistinct();
                 //Option 1: Using a combination of LINQ GroupBy and Select operators
                 grv_Products.DataSource = repo.GetProducts()
