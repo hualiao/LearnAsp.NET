@@ -31,23 +31,28 @@ namespace CSharp.Utility
             hex1 = hex.ToString();
 
         }
+
         static string ByteArrayToHexStringViaStringJoinArrayConvertAll(byte[] bytes)
         {
             return string.Join(string.Empty, Array.ConvertAll(bytes, b => b.ToString("X2")));
         }
+
         static string ByteArrayToHexStringViaStringConcatArrayConvertAll(byte[] bytes)
         {
             return string.Concat(Array.ConvertAll(bytes, b => b.ToString("X2")));
         }
+
         static string ByteArrayToHexStringViaBitConverter(byte[] bytes)
         {
             string hex = BitConverter.ToString(bytes);
             return hex.Replace("-", "");
         }
+
         static string ByteArrayToHexStringViaStringBuilderAggregateByteToString(byte[] bytes)
         {
             return bytes.Aggregate(new StringBuilder(bytes.Length * 2), (sb, b) => sb.Append(b.ToString("X2"))).ToString();
         }
+
         static string ByteArrayToHexStringViaStringBuilderForEachByteToString(byte[] bytes)
         {
             StringBuilder hex = new StringBuilder(bytes.Length * 2);
@@ -55,10 +60,12 @@ namespace CSharp.Utility
                 hex.Append(b.ToString("X2"));
             return hex.ToString();
         }
+
         static string ByteArrayToHexStringViaStringBuilderAggregateAppendFormat(byte[] bytes)
         {
             return bytes.Aggregate(new StringBuilder(bytes.Length * 2), (sb, b) => sb.AppendFormat("{0:X2}", b)).ToString();
         }
+        
         static string ByteArrayToHexStringViaStringBuilderForEachAppendFormat(byte[] bytes)
         {
             StringBuilder hex = new StringBuilder(bytes.Length * 2);
@@ -66,6 +73,7 @@ namespace CSharp.Utility
                 hex.AppendFormat("{0:X2}", b);
             return hex.ToString();
         }
+
         static string ByteArrayToHexViaByteManipulation(byte[] bytes)
         {
             char[] c = new char[bytes.Length * 2];
@@ -79,6 +87,7 @@ namespace CSharp.Utility
             }
             return new string(c);
         }
+
         static string ByteArrayToHexViaByteManipulation2(byte[] bytes)
         {
             char[] c = new char[bytes.Length * 2];
@@ -92,6 +101,7 @@ namespace CSharp.Utility
             }
             return new string(c);
         }
+
         static string ByteArrayToHexViaSoapHexBinary(byte[] bytes)
         {
             SoapHexBinary soapHexBinary = new SoapHexBinary(bytes);
