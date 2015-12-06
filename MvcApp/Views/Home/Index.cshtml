@@ -1,0 +1,29 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+<style type="text/css">
+    #divChange {
+        width:100%;
+        height:300px;
+        background-color:gray;
+    }
+</style>
+<script type="text/javascript">
+    $(function () {
+        // resize fired on window
+        $(window).resize(function () {
+            console.log("Window Width:" + $(window).width());
+        });
+        $('.test').resize(function () {
+            console.log("Test Width:" + $(window).width());
+        });
+        $('.test').resize();
+    });
+</script>
+<div id="divChange"></div>
+<p class="test">
+距离上次现金分期已经8个月了，整整8个月了，之前6月还能临时五千，后来申请经典白后，手痒就把临时取消了，然后近3个月任何临时固定死活不提了，求破。。。
+据说刷1.25机器  能破，刚好最近金价便宜，就跑老凤祥买点饰品送人，我试试看能不能提，已经刷了几次了。
+</p>

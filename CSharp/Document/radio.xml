@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<radio>
+  <channel id="Opus">
+    <display-name>Opus</display-name>
+    <icon src="" />
+  </channel>
+  <channel id="Klasika">
+    <display-name>Klasika</display-name>
+    <icon src="" />
+  </channel>
+  <channel id="LR">
+    <display-name>LR</display-name>
+    <icon src="" />
+  </channel>
+  <programme channel="Opus" start="20130203060000" stop="20130203110000" duration="050000">
+    <title lang="lt">OPUS muzika.</title>
+    <desc lang="lt">OPUS muzika.</desc>
+    <category lang="lt">muzikos laidos</category>
+    <date>2013.02.03</date>
+  </programme>
+  <programme channel="Opus" start="20130203110000" stop="20130203150000" duration="040000">
+    <title lang="lt">Vėlyvi pusryčiai su OPUS.</title>
+    <desc lang="lt">Vėlyvi pusryčiai su OPUS.</desc>
+    <category lang="lt">muzikos laidos</category>
+    <date>2013.02.03</date>
+  </programme>
+</radio>

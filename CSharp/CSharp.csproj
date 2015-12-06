@@ -68,6 +68,7 @@
     <Compile Include="Linq\Aggregate.cs" />
     <Compile Include="Linq\Foreach.cs" />
     <Compile Include="Linq\LinqToJson.cs" />
+    <Compile Include="Linq\LinqToXML.cs" />
     <Compile Include="Linq\Order.cs" />
     <Compile Include="Linq\StrCollectionToString.cs" />
     <Compile Include="NullCheck\NullCheckExtention.cs" />
@@ -96,13 +97,26 @@
     <Compile Include="Utility\ReadFile.cs" />
     <Compile Include="Utility\SortDictionary.cs" />
     <Compile Include="Utility\UniqueGenerator.cs" />
+    <Compile Include="Utility\XmLOperation.cs" />
+    <Compile Include="Utility\XmlSerializationAndDeserialization.cs" />
     <Compile Include="Whiskey.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Document\Employees.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Document\Meeting.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Document\radio.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<billing>
+  <item>
+    <id>1</id>
+    <customer>Pavan Kumar Pabothu</customer>
+    <type>Daily Scrum Call</type>
+    <date>4/5/2012</date>
+    <hours>1</hours>
+    <contact>
+      <phone>
+        <no>979107</no>
+        <type>home</type>
+      </phone>
+      <phone>
+        <no>9999995929</no>
+        <type>mobile</type>
+      </phone>
+    </contact>
+  </item>
+  <item>
+    <id>2</id>
+    <customer>Reddaiah Raju</customer>
+    <type>Sprint Meeting</type>
+    <date>3/20/2014</date>
+    <hours>4</hours>
+    <contact>
+      <phone>
+        <no>2375226</no>
+        <type>home</type>
+      </phone>
+      <phone>
+        <no>998884888</no>
+        <type>mobile</type>
+      </phone>
+    </contact>
+  </item>
+  <item>
+    <id>3</id>
+    <customer>Kishan Chand Yadav</customer>
+    <type>Daily Status Call</type>
+    <date>4/20/2014</date>
+    <hours>1</hours>
+    <contact>
+      <phone>
+        <no>9988776652</no>
+        <type>home</type>
+      </phone>
+      <phone>
+        <no>9988776654</no>
+        <type>mobile</type>
+      </phone>
+    </contact>
+  </item>
+</billing>

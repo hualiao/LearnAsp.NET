@@ -48,10 +48,10 @@ namespace CSharp.Utility
             return string.Format("{0:x}", i - DateTime.Now.Ticks); // Ticks return long, 1 Ticks = 100 nanosecond 
         }
 
-        private long GenerateId()
-        {
-            byte[] buffer = Guid.NewGuid().ToByteArray();
-            return BitConverter.ToInt64(buffer, 0);
-        }
+        //private long GenerateId()
+        //{
+        //    byte[] buffer = Guid.NewGuid().ToByteArray();
+        //    return BitConverter.ToInt64(buffer, 0);
+        //}
     }
 }

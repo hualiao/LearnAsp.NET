@@ -48,7 +48,7 @@ namespace CSharp.Algorithm
         }
     }
 
-    interface IWordDao 
+    public interface IWordDao 
     {
         IEnumerable<string> RetrieveWords();
     }

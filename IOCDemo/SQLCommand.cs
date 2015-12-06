@@ -13,6 +13,8 @@ namespace IOCDemo
 
         public static void BatchInsert()
         {
+            // how to get App Connecting string 
+            // Ref:http://www.codeproject.com/Tips/416198/How-to-get-Connection-String-from-App-Config-in-Cs
             _connection = System.Configuration.ConfigurationManager.ConnectionStrings["AliCloud"].ConnectionString;
             using (SqlConnection connection = new SqlConnection(_connection))
             {
