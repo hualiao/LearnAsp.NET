@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Xml;
 using System.Xml.XPath;
+using System.Xml.Linq;
 
 namespace CSharp.Utility
 {
@@ -199,5 +200,51 @@ namespace CSharp.Utility
             }
         }
 
+    }
+
+    /// <summary>
+    /// Ref:http://blogs.msdn.com/b/xmlteam/archive/2007/03/24/streaming-with-linq-to-xml-part-2.aspx
+    /// </summary>
+    public class XMLReader
+    {
+        public static IEnumerable<XElement> SimpleStreamAxis(
+            string inputUrl,string matchName)
+        {
+            using(XmlReader reader=XmlReader.Create(inputUrl))
+            {
+                reader.MoveToContent();
+                while(reader.Read())
+                {
+                    switch(reader.NodeType)
+                    {
+                        case XmlNodeType.Element:
+                            if(reader.Name==matchName)
+                            {
+                                XElement el=XElement.ReadFrom(reader)
+                                                     as XElement;
+                                if(el!=null)
+                                    yield return el;
+                            }
+                            break;
+                    }
+                }
+                reader.Close();
+            }
+        }
+
+        public static void Test()
+        {
+            string inputUrl=
+                @"http://download.wikimedia.org/enwikiquote/20070225/enwikiquote-20070225-abstract.xml";
+            IEnumerable<string> bardQuotes=
+                from el in SimpleStreamAxis(inputUrl,"doc")
+                where el.Element("abstract").Value.Contains("Shakespeare")
+                select (string)el.Element("url");
+
+            foreach(string str in bardQuotes)
+            {
+                Console.WriteLine(str);
+            }
+        }
     }
 }
