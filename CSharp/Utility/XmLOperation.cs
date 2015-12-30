@@ -188,7 +188,7 @@ namespace CSharp.Utility
             {
                 Console.WriteLine("");
                 Console.WriteLine("The following books are " + 
-                                    "in the \{0\} category:", p_Category);
+                                    "in the {0} category:", p_Category);
                 while (xPathIt.MoveNext())
                 {
                     Console.WriteLine(xPathIt.Current.Value);
@@ -196,7 +196,7 @@ namespace CSharp.Utility
             }
             else
             {
-                Console.WriteLine("No books found in the \{0\} category", p_Category);
+                Console.WriteLine("No books found in the {0} category", p_Category);
             }
         }
 
