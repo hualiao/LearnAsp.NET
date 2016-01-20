@@ -20,7 +20,13 @@ namespace WebApp.Helpers
                 string.Format("CacheSample.BusinessObjects.GetSalesWithCache({0})",
                 highestDayCount);
 
-            
+            var sqlCacheDependency = CacheDependencyFactory.
+                CreateCacheDependency<ISqlCacheDependency>();
+            sqlCacheDependency.DatabaseConnectionName = "CacheSample";
+            sqlCacheDependency.TableName = "Sale";
+
+            ICacheDependency[] cacheDependencies =
+                new ICacheDependency[] { sqlCacheDependency };
 
             return CacheProviderFactory.GetCacheProvider<Sale>().Fetch(cacheKey,
                 delegate()
@@ -64,7 +70,8 @@ namespace WebApp.Helpers
                     return sales;
                 },
                 null,
-                new TimeSpan(0, 10, 0));
+                null,
+                cacheDependencies);
             
         }
     }
@@ -80,10 +87,22 @@ namespace WebApp.Helpers
             DateTime? absoluteExpiry,
             TimeSpan? relativeExpiry);
 
+        T Fetch(string key,
+            Func<T> retrieveData,
+            DateTime? absoluteExpiry,
+            TimeSpan? relativeExpiry,
+            IEnumerable<ICacheDependency> cacheDependencies);
+
         IEnumerable<T> Fetch(string key,
             Func<IEnumerable<T>> retrieveData,
             DateTime? absoluteExpiry,
             TimeSpan? relativeExpiry);
+
+        IEnumerable<T> Fetch(string key,
+            Func<IEnumerable<T>> retrieveData,
+            DateTime? absoluteExpiry,
+            TimeSpan? relativeExpiry,
+            IEnumerable<ICacheDependency> cacheDependencies);
     }
 
     public static class CacheProviderFactory
@@ -156,6 +175,192 @@ namespace WebApp.Helpers
             {
                 return (string)this["type"];
             }
+        }
+
+        [ConfigurationProperty("cacheDependencies")]
+        public CacheDenpedencyConfigurationElementCollection CacheDependencies
+        {
+            get
+            {
+                return (CacheDenpedencyConfigurationElementCollection)
+                    base["cacheDependencies"];
+            }
+        }
+
+    }
+
+
+
+    internal class CacheDependencyConfigurationElement : ConfigurationElement
+    {
+        [ConfigurationProperty("interface",IsRequired=true)]
+        public string CacheDependencyInterface
+        {
+            get
+            {
+                return (string)this["interface"];
+            }
+        }
+
+        [ConfigurationProperty("type",IsRequired=true)]
+        public string CacheDependencyType
+        {
+            get
+            {
+                return (string)this["type"];
+            }
+        }
+    }
+
+    internal class CacheDenpedencyConfigurationElementCollection :
+        ConfigurationElementCollection
+    {
+        protected override string ElementName
+        {
+            get
+            {
+                return "cacheDependency";
+            }
+        }
+
+        protected override ConfigurationElement CreateNewElement()
+        {
+            return new CacheDependencyConfigurationElement();
+        }
+
+        public override ConfigurationElementCollectionType CollectionType
+        {
+            get
+            {
+                return ConfigurationElementCollectionType.BasicMap;
+            }
+        }
+
+        protected override object GetElementKey(ConfigurationElement element)
+        {
+            return ((CacheDependencyConfigurationElement)element).
+                CacheDependencyInterface;
+        }
+
+        public CacheDependencyConfigurationElement this[int index]
+        {
+            get
+            {
+                return (CacheDependencyConfigurationElement)BaseGet(index);
+            }
+        }
+
+        public new CacheDependencyConfigurationElement this[string Interface]
+        {
+            get
+            {
+                return (CacheDependencyConfigurationElement)BaseGet(Interface);
+            }
+        }       
+    }
+
+    /// <summary>
+    /// Provide an efficient mechanism for creating new instances
+    /// of ICacheDependency implementation at runtime
+    /// </summary>
+    internal class CacheDependencyCreator
+    {
+        /// <summary>
+        /// Create a new instance of the relevant ICacheDependency implementation
+        /// </summary>
+        /// <returns></returns>
+        public virtual ICacheDependency Create()
+        {
+            throw new NotImplementedException();
+        }
+    }
+
+    /// <summary>
+    /// Provide an efficient mechanism for creating new instances
+    /// of ICacheDependency implementations at runtime
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
+    internal class CacheDependencyCreator<T> : CacheDependencyCreator
+        where T : ICacheDependency, new()
+    {
+        /// <summary>
+        /// Create a new instance of relevant ICacheDependency implemention
+        /// </summary>
+        /// <returns></returns>
+        public override ICacheDependency Create()
+        {
+            return new T();
+        }
+    }
+
+    public static class CacheDependencyFactory
+    {
+        private static Dictionary<Type, CacheDependencyCreator>
+            cacheDependencyCreators = new Dictionary<Type, CacheDependencyCreator>();
+        private static object syncRoot = new object();
+
+        public static T CreateCacheDependency<T>()
+            where T : ICacheDependency
+        {
+            ICacheDependency cacheDependency = null;
+            Type typeOfT = typeof(T);
+
+            lock (syncRoot)
+            {
+                if (cacheDependencyCreators.ContainsKey(typeOfT))
+                    // The cacheDependencyCreators dictionary already
+                    // has a creator for this type of cache dependency,
+                    // so create the instance by calling its Create() method
+                    cacheDependency = ((CacheDependencyCreator)cacheDependencyCreators[typeOfT])
+                        .Create();
+                else
+                {
+                    // Get the cache dependency configuration for the cache dependency
+                    // interface type
+                    var cacheDependencyConfiguration =
+                        CacheProviderConfigurationSection.Current.
+                        CacheDependencies[typeOfT.Name];
+                    if (cacheDependencyConfiguration != null)
+                    {
+                        // Get the type for the implementation of the specified cache
+                        // dependency interface
+                        string strCacheDependencyImplementationType =
+                            cacheDependencyConfiguration.CacheDependencyType;
+                        Type typeOfCacheDependencyImplementation =
+                            Type.GetType(strCacheDependencyImplementationType);
+                        // Get the Type reference for the CacheDependencyCreator
+                        // generic class
+                        Type typeOfCacheDependencyCreator =
+                            typeof(CacheDependencyCreator<>);
+                        if (typeOfCacheDependencyImplementation != null
+                            && typeOfCacheDependencyCreator != null)
+                        {
+                            // Get the type reference for
+                            // CacheDependencyCreator<cache interface implementation>
+                            Type typeOfCacheDependencyCreatorForImplementationOfT =
+                                typeOfCacheDependencyCreator.MakeGenericType(
+                                new Type[] { typeOfCacheDependencyImplementation });
+                            if (typeOfCacheDependencyCreatorForImplementationOfT != null)
+                            {
+                                // Create the CacheDependencyCreator<cache interface implementation>
+                                // instance
+                                var cacheDependencyCreator = (CacheDependencyCreator)Activator.CreateInstance(
+                                    typeOfCacheDependencyCreatorForImplementationOfT);
+                                // Add the CacheDependencyCreator<cache interface implementation>
+                                // instance to the dictionary
+                                cacheDependencyCreators.Add(typeOfT, cacheDependencyCreator);
+                                
+                                // Create the Cache Dependency instance
+                                cacheDependency = cacheDependencyCreator.Create();
+                            }
+                                
+                        }
+                    }
+                }
+            }
+
+            return (T)cacheDependency;
+
         }
     }
 }

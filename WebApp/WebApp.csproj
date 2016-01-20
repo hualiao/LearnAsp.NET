@@ -81,6 +81,7 @@
     </Compile>
     <Compile Include="Helpers\AspNetCacheProvider.cs" />
     <Compile Include="Helpers\Cache.cs" />
+    <Compile Include="Helpers\CacheProvider.cs" />
     <Compile Include="Helpers\CustomConfiguration.cs" />
     <Compile Include="Helpers\Logger.cs" />
     <Compile Include="ImageGridDemo.aspx.cs">
