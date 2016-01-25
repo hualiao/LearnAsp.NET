@@ -57,6 +57,7 @@
   <ItemGroup>
     <Compile Include="Algorithm\LeetCodeOj\001-Two Sum.cs" />
     <Compile Include="Algorithm\LeetCodeOj\002-Add Two Numbers.cs" />
+    <Compile Include="Algorithm\LeetCodeOj\003-Longest Substring without repeat.cs" />
     <Compile Include="Algorithm\LiatAllAnagrams.cs" />
     <Compile Include="Algorithm\LowestCommonAncestor.cs" />
     <Compile Include="CodeTimer\CodeTimer.cs" />
