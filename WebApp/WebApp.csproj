@@ -39,6 +39,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Runtime.Caching" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -81,6 +82,7 @@
     </Compile>
     <Compile Include="Helpers\AspNetCacheProvider.cs" />
     <Compile Include="Helpers\Cache.cs" />
+    <Compile Include="Helpers\CacheObject.cs" />
     <Compile Include="Helpers\CacheProvider.cs" />
     <Compile Include="Helpers\CustomConfiguration.cs" />
     <Compile Include="Helpers\Logger.cs" />
