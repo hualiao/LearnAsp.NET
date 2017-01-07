@@ -60,6 +60,7 @@
   <ItemGroup>
     <Content Include="Controls\ImageGrid.ascx" />
     <Content Include="CustomConfiguration.aspx" />
+    <Content Include="EvalAndBind.aspx" />
     <Content Include="ImageGridDemo.aspx" />
     <Content Include="ListDistinct.aspx" />
     <Content Include="ShowSales.aspx" />
@@ -79,6 +80,14 @@
     </Compile>
     <Compile Include="CustomConfiguration.aspx.designer.cs">
       <DependentUpon>CustomConfiguration.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DemoObject\EvalAndBindObject.cs" />
+    <Compile Include="EvalAndBind.aspx.cs">
+      <DependentUpon>EvalAndBind.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EvalAndBind.aspx.designer.cs">
+      <DependentUpon>EvalAndBind.aspx</DependentUpon>
     </Compile>
     <Compile Include="Helpers\AspNetCacheProvider.cs" />
     <Compile Include="Helpers\Cache.cs" />
