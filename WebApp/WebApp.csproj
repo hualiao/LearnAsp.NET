@@ -63,6 +63,7 @@
     <Content Include="EvalAndBind.aspx" />
     <Content Include="ImageGridDemo.aspx" />
     <Content Include="ListDistinct.aspx" />
+    <Content Include="RepeaterInRepeater.aspx" />
     <Content Include="ShowSales.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -82,6 +83,7 @@
       <DependentUpon>CustomConfiguration.aspx</DependentUpon>
     </Compile>
     <Compile Include="DemoObject\EvalAndBindObject.cs" />
+    <Compile Include="DemoObject\RepeaterInRepeater.cs" />
     <Compile Include="EvalAndBind.aspx.cs">
       <DependentUpon>EvalAndBind.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -111,6 +113,13 @@
     </Compile>
     <Compile Include="ListDistinct.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RepeaterInRepeater.aspx.cs">
+      <DependentUpon>RepeaterInRepeater.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RepeaterInRepeater.aspx.designer.cs">
+      <DependentUpon>RepeaterInRepeater.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ShowSales.aspx.cs">
       <DependentUpon>ShowSales.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
